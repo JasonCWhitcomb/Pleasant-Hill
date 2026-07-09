@@ -48,6 +48,8 @@
   --radius:18px;
 }
 
+@font-face{font-family:'Sacramento';font-style:normal;font-weight:400;font-display:swap;src:url('assets/sacramento.ttf') format('truetype')}
+
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 section[id],header[id]{scroll-margin-top:76px}
@@ -103,6 +105,16 @@ h1,h2,h3,h4{font-family:"Fraunces",serif;font-weight:500;letter-spacing:-.016em;
   0 1px 0 #9A6E16, 0 2px 0 #855F12, 0 3px 0 #6F500F,
   0 6px 16px rgba(0,0,0,.4);
 }
+/* softer variant for light-ground section titles (less intense) */
+.d3d.soft{text-shadow:0 1px 0 #EBE3D0,0 3px 8px rgba(24,44,36,.12)}
+.d3d.soft .hl{text-shadow:0 1px 0 #E0C583,0 2px 6px rgba(120,80,20,.16)}
+/* hero: barely-there depth so it reads crisp, not busy */
+.hero-title{text-shadow:0 2px 10px rgba(24,44,36,.10)}
+.hero-title .hl{text-shadow:0 2px 8px rgba(120,80,20,.14)}
+/* green title accent (used once, for "the right way") */
+.hl-g{color:var(--green-deep)}
+.forest .hl-g,.d3d-dark .hl-g{color:var(--green-glow)}
+.nowrap{white-space:nowrap}
 @media (prefers-reduced-motion:no-preference){
   .d3d,.d3d-dark{transition:text-shadow .4s var(--ease)}
 }
@@ -118,15 +130,13 @@ h1,h2,h3,h4{font-family:"Fraunces",serif;font-weight:500;letter-spacing:-.016em;
 .brand .b-txt{display:flex;flex-direction:column;line-height:1.12}
 .brand .b-1{font-family:"Fraunces",serif;font-size:1.08rem;font-weight:600;letter-spacing:-.01em}
 .brand .b-2{font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--tx-mute)}
-/* Kinetic Culture logo lockup */
-.kc-lockup{display:flex;align-items:center;gap:.7rem;text-decoration:none}
-.kc-by{font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:var(--tx-mute);font-weight:600}
-.kc-logo{height:26px;width:auto}
-.kc-logo .kc-word-1,.kc-logo .kc-word-2{font-family:"Hanken Grotesk",sans-serif;font-weight:800;font-size:8.4px;letter-spacing:1.6px;fill:var(--tx)}
-.kc-logo .kc-word-2{fill:var(--green-deep)}
-.nav.scrolled .kc-logo rect{fill:var(--tx)}
+/* Kinetic Culture logo lockup (script wordmark) */
+.kc-lockup{display:flex;align-items:baseline;gap:.6rem;text-decoration:none}
+.kc-by{font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:var(--tx-mute);font-weight:600;transform:translateY(-2px)}
+.kc-script{font-family:'Sacramento',cursive;font-size:1.85rem;line-height:1;color:var(--forest);white-space:nowrap}
+.kc-foot{font-size:1.35rem;color:var(--tx-inv);vertical-align:middle}
 @media (max-width:680px){.kc-by{display:none}}
-@media (max-width:440px){.kc-logo{height:22px}.brand .b-2{display:none}}
+@media (max-width:440px){.kc-script{font-size:1.6rem}.brand .b-2{display:none}}
 
 /* =========================================================
    BUTTONS
@@ -646,6 +656,58 @@ h1,h2,h3,h4{font-family:"Fraunces",serif;font-weight:500;letter-spacing:-.016em;
 .pullquote .pq-mark{position:absolute;top:-2.4rem;left:50%;transform:translateX(-50%);font-family:"Fraunces",serif;font-weight:600;font-size:clamp(7rem,18vw,13rem);line-height:1;color:var(--green);opacity:.14;pointer-events:none}
 .pq{font-family:"Fraunces",serif;font-weight:500;font-style:italic;font-size:clamp(1.8rem,5vw,3.6rem);line-height:1.18;letter-spacing:-.02em;color:var(--forest);max-width:20ch;margin:0 auto;position:relative}
 .pq .hl{color:var(--gold-deep);font-style:normal}
+
+/* =========================================================
+   v4 — how-head, guarantees, equity, glass, width fixes
+   ========================================================= */
+/* how-it-works: two columns so the right side isn't dead space */
+.how-head{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(2rem,5vw,4rem);align-items:center;margin-bottom:clamp(2.6rem,6vw,3.8rem)}
+.how-head>div:first-child .eyebrow{margin-bottom:1.1rem}
+.how-head h2{font-size:clamp(2rem,5vw,3.3rem);margin-bottom:1.2rem;max-width:16ch}
+.how-head p{color:var(--tx-mute);font-size:clamp(1rem,1.6vw,1.16rem);max-width:52ch}
+.guarantees{background:linear-gradient(180deg,var(--forest-2),var(--forest));border-radius:20px;padding:clamp(1.6rem,4vw,2.2rem);box-shadow:0 24px 50px -30px rgba(24,44,36,.5)}
+.guarantees .gtitle{font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--gold-brt);margin-bottom:1.3rem}
+.guarantees ul{list-style:none;display:flex;flex-direction:column;gap:1rem}
+.guarantees li{display:flex;gap:.85rem;align-items:flex-start;color:var(--tx-inv-mute);font-size:.98rem;line-height:1.4}
+.guarantees li b{color:var(--tx-inv);font-weight:600}
+.guarantees li svg{flex:none;width:22px;height:22px;stroke:var(--green-glow);fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;margin-top:.05rem}
+@media (max-width:820px){.how-head{grid-template-columns:1fr;gap:2rem}}
+
+/* equity / sweat-equity banner */
+.equity-banner{display:grid;grid-template-columns:auto 1fr auto;gap:clamp(1.1rem,3vw,2rem);align-items:center;
+  background:linear-gradient(120deg,var(--forest),var(--forest-2));border:1px solid rgba(247,200,102,.28);
+  border-radius:22px;padding:clamp(1.5rem,4vw,2.2rem);margin-bottom:2rem;position:relative;overflow:hidden;
+  box-shadow:0 26px 54px -34px rgba(24,44,36,.55)}
+.equity-banner .eb-ic{width:60px;height:60px;flex:none;border-radius:16px;display:grid;place-items:center;background:linear-gradient(150deg,rgba(84,182,129,.28),rgba(247,200,102,.22));box-shadow:inset 0 1px 1px rgba(255,255,255,.16)}
+.equity-banner .eb-ic svg{width:30px;height:30px;stroke:var(--gold-brt);fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.equity-banner h3{font-size:clamp(1.2rem,2.6vw,1.6rem);color:var(--tx-inv);margin-bottom:.5rem}
+.equity-banner p{color:var(--tx-inv-mute);font-size:.98rem;line-height:1.55;max-width:62ch}
+.equity-banner p b{color:var(--gold-brt);font-weight:600}
+.equity-banner .eb-badge{flex:none;font-family:"JetBrains Mono",monospace;font-weight:700;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--forest);background:var(--gold-brt);padding:.7rem 1rem;border-radius:12px;text-align:center;line-height:1.2;transform:rotate(3deg)}
+@media (max-width:720px){.equity-banner{grid-template-columns:auto 1fr}.equity-banner .eb-badge{display:none}}
+
+/* full-width supporting paragraphs (match the grid above) */
+.invest-note{max-width:none!important}
+.bench-note{max-width:none!important}
+
+/* tighten the gap into the pull quote */
+.invest.pad-y{padding-bottom:clamp(2.6rem,6vw,3.6rem)}
+.pullquote{padding-top:clamp(2.4rem,6vw,4rem)!important}
+
+/* glass proof tiles */
+.proof{position:relative;overflow:hidden}
+.proof-bg{position:absolute;inset:0;z-index:0;pointer-events:none;
+  background:
+    radial-gradient(40vw 40vw at 82% 8%,rgba(247,200,102,.16),transparent 60%),
+    radial-gradient(44vw 44vw at 10% 88%,rgba(84,182,129,.16),transparent 62%)}
+.proof .wrap{position:relative;z-index:1}
+.bcard.glass{
+  background:linear-gradient(150deg,rgba(255,255,255,.72),rgba(255,255,255,.42));
+  -webkit-backdrop-filter:blur(10px) saturate(140%);backdrop-filter:blur(10px) saturate(140%);
+  border:1px solid rgba(255,255,255,.7);
+  box-shadow:0 1px 0 rgba(255,255,255,.7) inset,0 18px 40px -22px rgba(24,44,36,.4),0 40px 70px -50px rgba(24,44,36,.5);
+}
+@media (hover:hover){.bcard.glass:hover{background:linear-gradient(150deg,rgba(255,255,255,.86),rgba(255,255,255,.55));box-shadow:0 1px 0 rgba(255,255,255,.8) inset,0 26px 50px -24px rgba(24,44,36,.45),0 60px 90px -55px rgba(230,167,51,.28)}}
 
 /* =========================================================
    REVEAL + MOTION
