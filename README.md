@@ -1,43 +1,49 @@
-# East Bay Community Partnerships — Pleasant Hill Pitch
+# Common Ground — By Pleasant Hill, for Pleasant Hill
 
-An interactive proposal page making the case for launching **East Bay Community
-Partnerships** — a public-private revenue-share partnership that generates new,
-non-tax revenue for the Pleasant Hill Recreation & Park District — under the
-**Kinetic Culture** brand.
+An interactive proposal to fund the future of Pleasant Hill's parks through
+**community ownership** — where local businesses and neighbors invest in the
+places we all live and play. No new taxes. Powered by **Kinetic Culture**.
 
-## What it is
+## The idea
 
-A single-page, fully interactive pitch built for the City of Pleasant Hill's
-City Manager and the Recreation & Park District Board. It tells the story in the
-board's own language: after Measure S (the $77M parks bond) fell just short of a
-two-thirds supermajority in November 2024, this is a funding path that carries
-**zero taxpayer risk**.
+Turn Pleasant Hill's most-loved places into a self-sustaining community
+business that everyone can own a piece of — from a $100 engraved brick to a
+$25K presenting partnership. Local businesses get real roots; neighbors get to
+leave a mark; the Rec & Park District gets new, recurring, non-tax funding for
+pools, fields and programs. Everyone puts in. Everyone wins.
 
-Highlights:
+Primary audience: the **Pleasant Hill Recreation & Park District** (which owns
+the parks/assets), with the **City of Pleasant Hill** as an aligned partner.
 
-- **Interactive revenue projections** — Conservative / Foundation / Regional
-  scenarios, tap any year for the 70/30 District split.
-- **Sponsorship tier deep-dives** — modal windows for Silver / Gold / Presenting.
-- **Asset explorer** — what's sponsorable, what it's worth, and who would buy it.
-- **"The Room"** — the pitch through each decision-maker's lens.
-- **Benchmarks** — real, sourced comparables from other park agencies.
+## Highlights
+
+- Emotional, sunlit hero and a big-idea vision band
+- **Who invests** — business partnership tiers *and* resident buy-in (pavers,
+  benches, Founders' Wall, Legacy Circle)
+- **Interactive revenue projections** — Conservative / Plan / Ambitious; tap any
+  year and the stream breakdown below updates live
+- **Asset explorer** — what's sponsorable, its annual value, and the local
+  partners it's built for
+- **The whole room** — the proposal through each decision-maker's lens
+- Sourced benchmarks + an honest "you're already doing a version of this" note
+- Tier deep-dive modals, seamless marquee, scroll-triggered motion throughout
 
 ## Stack
 
 Plain HTML, CSS and vanilla JavaScript — no build step, no dependencies.
 Consistent with the existing kineticculture.com pages and optimized for fast
-loads on any device a board member might use in a meeting room.
+loads on any device.
 
-- `index.html` — page structure and copy
-- `styles.css` — design system (Pleasant Hill civic palette + Fraunces / Hanken / JetBrains Mono)
-- `script.js` — all interactivity (scroll reveals, counters, charts, modals, contact form)
+- `index.html` — structure and copy
+- `styles.css` — design system (sunlit Pleasant Hill palette + Fraunces / Hanken / JetBrains Mono)
+- `script.js` — all interactivity
 - `assets/` — favicon and static assets
-- `vercel.json` — deploy config (clean URLs, caching, security headers)
+- `vercel.json` — static deploy config
 
 ## Deploy (Vercel)
 
-This is a static site. On Vercel, import the GitHub repo and deploy — no build
-command or framework preset required (Output Directory: repository root).
+Static site. On Vercel, import the GitHub repo and deploy — no build command or
+framework preset required (Output Directory: repository root).
 
 ## Note
 
