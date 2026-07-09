@@ -80,12 +80,32 @@ h1,h2,h3,h4{font-family:"Fraunces",serif;font-weight:500;letter-spacing:-.016em;
 .eyebrow.sky{color:var(--sky)}
 .eyebrow.inv{color:var(--green-glow)}
 
+/* one disciplined title accent everywhere */
+.hl{color:var(--gold-deep)}
+.forest .hl,.assets .hl,.vision .hl,.why .hl,.close .hl,.d3d-dark .hl{color:var(--gold-brt)}
 .lit{color:var(--gold-deep)}
 .forest .lit{color:var(--gold-brt)}
-.lit-g{color:var(--green)}
-.forest .lit-g{color:var(--green-glow)}
-.lit-s{color:var(--sky)}
-.forest .lit-s{color:var(--sky-brt)}
+
+/* 3D depth for display headings — subtle tonal extrude + ambient lift */
+.d3d{ text-shadow:
+  0 1px 0 #E7DEC9, 0 2px 0 #E1D7BF, 0 3px 0 #DBD0B4,
+  0 5px 10px rgba(24,44,36,.16), 0 12px 26px rgba(24,44,36,.10);
+}
+.d3d .hl{ text-shadow:
+  0 1px 0 #D9BE7C, 0 2px 0 #D2B36B, 0 3px 0 #C9A759,
+  0 5px 12px rgba(120,80,20,.22);
+}
+.d3d-dark{ text-shadow:
+  0 1px 0 #0A2019, 0 2px 0 #081C15, 0 3px 0 #061711,
+  0 6px 16px rgba(0,0,0,.4), 0 14px 34px rgba(0,0,0,.28);
+}
+.d3d-dark .hl{ text-shadow:
+  0 1px 0 #9A6E16, 0 2px 0 #855F12, 0 3px 0 #6F500F,
+  0 6px 16px rgba(0,0,0,.4);
+}
+@media (prefers-reduced-motion:no-preference){
+  .d3d,.d3d-dark{transition:text-shadow .4s var(--ease)}
+}
 
 /* =========================================================
    NAV
@@ -97,11 +117,16 @@ h1,h2,h3,h4{font-family:"Fraunces",serif;font-weight:500;letter-spacing:-.016em;
 .brand .emblem{width:38px;height:38px;flex:none}
 .brand .b-txt{display:flex;flex-direction:column;line-height:1.12}
 .brand .b-1{font-family:"Fraunces",serif;font-size:1.08rem;font-weight:600;letter-spacing:-.01em}
-.brand .b-2{font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--tx-mute);display:flex;align-items:center;gap:.4rem}
-.brand .b-2 .kc-mark{height:11px;width:auto;opacity:.85}
-.nav-right{display:flex;align-items:center;gap:1.2rem}
-.nav-note{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--tx-mute);font-weight:600}
-@media (max-width:680px){.nav-note{display:none}}
+.brand .b-2{font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--tx-mute)}
+/* Kinetic Culture logo lockup */
+.kc-lockup{display:flex;align-items:center;gap:.7rem;text-decoration:none}
+.kc-by{font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:var(--tx-mute);font-weight:600}
+.kc-logo{height:26px;width:auto}
+.kc-logo .kc-word-1,.kc-logo .kc-word-2{font-family:"Hanken Grotesk",sans-serif;font-weight:800;font-size:8.4px;letter-spacing:1.6px;fill:var(--tx)}
+.kc-logo .kc-word-2{fill:var(--green-deep)}
+.nav.scrolled .kc-logo rect{fill:var(--tx)}
+@media (max-width:680px){.kc-by{display:none}}
+@media (max-width:440px){.kc-logo{height:22px}.brand .b-2{display:none}}
 
 /* =========================================================
    BUTTONS
@@ -125,18 +150,28 @@ h1,h2,h3,h4{font-family:"Fraunces",serif;font-weight:500;letter-spacing:-.016em;
   background:linear-gradient(180deg,#EAF3F4 0%,#F3EFE0 42%,#F6EFDD 100%)}
 .hero .wrap{position:relative;z-index:5;padding-bottom:clamp(3rem,8vw,6rem);padding-top:7rem;width:100%}
 /* sky sun */
-.hero-sun{position:absolute;z-index:1;top:9%;right:11%;width:min(34vw,380px);aspect-ratio:1;border-radius:50%;
-  background:radial-gradient(circle,rgba(247,200,102,.9),rgba(230,167,51,.42) 45%,rgba(230,167,51,0) 70%);
-  animation:sunrise 2.2s var(--ease) both,sunfloat 18s ease-in-out infinite alternate}
+/* atmospheric drifting orbs for depth */
+.hero-atmos{position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none}
+.hero-atmos .orb{position:absolute;border-radius:50%;filter:blur(40px);opacity:.5;will-change:transform}
+.hero-atmos .o1{width:36vw;height:36vw;top:-8vw;left:-6vw;background:radial-gradient(circle,rgba(143,220,174,.6),transparent 68%);animation:drift 26s var(--ease) infinite alternate}
+.hero-atmos .o2{width:30vw;height:30vw;top:8vw;right:-4vw;background:radial-gradient(circle,rgba(127,204,230,.45),transparent 68%);animation:drift2 30s var(--ease) infinite alternate}
+.hero-atmos .o3{width:26vw;height:26vw;bottom:14vw;left:24vw;background:radial-gradient(circle,rgba(247,200,102,.4),transparent 68%);animation:drift 34s var(--ease) infinite alternate}
+@keyframes drift{to{transform:translate(28px,-22px) scale(1.08)}}
+@keyframes drift2{to{transform:translate(-30px,18px) scale(1.06)}}
+/* modern sun: soft glow + defined core */
+.hero-sun{position:absolute;z-index:1;top:8%;right:12%;width:min(30vw,340px);aspect-ratio:1;border-radius:50%;
+  background:radial-gradient(circle,rgba(247,200,102,.55),rgba(230,167,51,.14) 48%,transparent 72%);
+  display:grid;place-items:center;animation:sunrise 2.2s var(--ease) both,sunfloat 18s ease-in-out infinite alternate}
+.sun-core{width:42%;height:42%;border-radius:50%;background:radial-gradient(circle at 38% 34%,#FFF0CE,#F7C866 55%,#E6A733);box-shadow:0 0 60px 12px rgba(247,200,102,.5)}
 @keyframes sunrise{from{opacity:0;transform:translateY(60px) scale(.85)}to{opacity:1;transform:none}}
 @keyframes sunfloat{to{transform:translateY(-16px)}}
 /* layered hills scene */
 .hero-scene{position:absolute;inset:0;z-index:2;overflow:hidden;pointer-events:none}
 .hero-scene svg{position:absolute;bottom:-1px;left:50%;transform:translateX(-50%);width:max(1500px,102%);height:auto}
 .hero-layer{will-change:transform}
-.hero-clouds{position:absolute;z-index:1;top:0;left:0;width:100%;height:46%;opacity:.7}
-.hero-cloud{position:absolute;border-radius:100px;background:rgba(255,255,255,.7);filter:blur(6px)}
-.hero-birds{position:absolute;z-index:3;top:22%;left:12%;width:120px;opacity:.5}
+/* fine film grain for a modern, non-flat finish */
+.hero-grain{position:absolute;inset:0;z-index:3;pointer-events:none;opacity:.5;mix-blend-mode:soft-light;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
 
 .hero .k{display:inline-flex;align-items:center;gap:.6rem;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:var(--green-deep);background:rgba(84,182,129,.14);border:1px solid rgba(44,138,87,.24);padding:.5rem .95rem;border-radius:999px;margin-bottom:1.6rem;opacity:0;transform:translateY(14px);transition:.8s var(--ease) .2s}
 .hero .k .d{width:7px;height:7px;border-radius:50%;background:var(--green);animation:live 2.6s ease-out infinite}
@@ -564,6 +599,53 @@ h1,h2,h3,h4{font-family:"Fraunces",serif;font-weight:500;letter-spacing:-.016em;
 .m-split .ms-k{font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--tx-inv-mute)}
 .m-split .ms-v{font-family:"JetBrains Mono",monospace;font-weight:700;font-size:1.4rem;color:var(--gold-brt);margin-top:.3rem}
 .m-split .ms-v.g{color:var(--green-glow)}
+
+/* =========================================================
+   v3 — DEPTH, DIMENSION, UPLIFTED ICONS
+   ========================================================= */
+/* 3D tilt cards (JS drives transform on hover-capable devices) */
+.tilt{transform-style:preserve-3d;transition:transform .3s var(--ease),box-shadow .45s var(--ease);will-change:transform}
+
+/* richer, layered depth on every card surface */
+.win,.istep,.tier,.rcard,.bcard,.gapcard,.cred,.chart-card,.reinvest,.already,.room-panel,.asset-panel{
+  box-shadow:0 1px 2px rgba(24,44,36,.05),0 10px 24px -14px rgba(24,44,36,.28),0 30px 60px -40px rgba(24,44,36,.3);
+}
+.istep,.rcard,.tier,.bcard{background-image:linear-gradient(180deg,#FFFFFF,var(--paper))}
+@media (hover:hover){
+  .win:hover,.istep:hover,.rcard:hover,.bcard:hover,.gapcard:hover,.cred:hover{
+    box-shadow:0 2px 4px rgba(24,44,36,.06),0 20px 40px -18px rgba(24,44,36,.38),0 44px 80px -48px rgba(24,44,36,.4);
+  }
+  .tier:hover{box-shadow:0 3px 6px rgba(24,44,36,.08),0 26px 52px -22px rgba(24,44,36,.45),0 50px 90px -50px rgba(230,167,51,.3)}
+}
+/* uplifted icons — gradient tile, inner highlight, floating shadow */
+.w-ic,.is-ic,.rc-ic{
+  background:linear-gradient(150deg,#EAF6EE 0%,#F7EBCF 100%)!important;
+  box-shadow:inset 0 1px 1px rgba(255,255,255,.9),inset 0 -3px 6px rgba(46,138,87,.12),0 8px 18px -8px rgba(24,44,36,.35);
+  border:1px solid rgba(46,138,87,.14);position:relative;overflow:hidden;
+}
+.win .w-ic{background:linear-gradient(150deg,rgba(143,220,174,.22),rgba(247,200,102,.16))!important;box-shadow:inset 0 1px 1px rgba(255,255,255,.14),0 8px 18px -10px rgba(0,0,0,.5)}
+.w-ic svg,.is-ic svg,.rc-ic svg{filter:drop-shadow(0 2px 3px rgba(27,107,66,.28));stroke-width:1.9}
+.is-ic svg,.rc-ic svg{stroke:var(--green-deep)}
+.at-ic{box-shadow:inset 0 1px 1px rgba(255,255,255,.12),0 6px 14px -8px rgba(0,0,0,.4)}
+.a-badge{box-shadow:0 12px 26px -10px rgba(27,107,66,.6),inset 0 1px 2px rgba(255,255,255,.3)}
+
+/* inventory: gold, not blue (palette discipline) */
+.avb-list b{color:var(--gold-deep)!important;background:rgba(230,167,51,.12)!important;border:1px solid rgba(230,167,51,.3)!important}
+.forest .avb-list b,.assets .avb-list b{color:var(--gold-brt)!important;background:rgba(247,200,102,.1)!important;border:1px solid rgba(247,200,102,.26)!important}
+
+/* six-up family grid */
+.resident-grid.six{grid-template-columns:repeat(3,1fr)}
+@media (max-width:900px){.resident-grid.six{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.resident-grid.six{grid-template-columns:1fr}}
+
+/* =========================================================
+   PULL QUOTE — stylistic, prominent
+   ========================================================= */
+.pullquote{background:linear-gradient(180deg,var(--cream),var(--cream-2));padding:clamp(3.5rem,9vw,6.5rem) 0;position:relative;overflow:hidden}
+.pullquote .wrap{position:relative;text-align:center}
+.pullquote .pq-mark{position:absolute;top:-2.4rem;left:50%;transform:translateX(-50%);font-family:"Fraunces",serif;font-weight:600;font-size:clamp(7rem,18vw,13rem);line-height:1;color:var(--green);opacity:.14;pointer-events:none}
+.pq{font-family:"Fraunces",serif;font-weight:500;font-style:italic;font-size:clamp(1.8rem,5vw,3.6rem);line-height:1.18;letter-spacing:-.02em;color:var(--forest);max-width:20ch;margin:0 auto;position:relative}
+.pq .hl{color:var(--gold-deep);font-style:normal}
 
 /* =========================================================
    REVEAL + MOTION

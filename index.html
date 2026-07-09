@@ -13,7 +13,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Hanken+Grotesk:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css" />
@@ -25,63 +25,76 @@
   <nav class="nav" id="nav">
     <div class="nav-inner">
       <a class="brand" href="#top" aria-label="Common Ground — a Kinetic Culture initiative for Pleasant Hill">
-        <svg class="emblem" viewBox="0 0 40 40" aria-hidden="true">
-          <circle cx="20" cy="20" r="18.5" fill="none" stroke="#E6A733" stroke-width="1.1" opacity=".55"/>
-          <circle cx="27" cy="13" r="4.4" fill="#F7C866"/>
-          <path d="M5 29 Q12.5 20.5 20 25.5 Q27.5 30.5 35 23.5 L35 33 Q20 33 5 33 Z" fill="#1B6B42"/>
-          <path d="M5 31.5 Q13 25.5 21 30 Q28.5 33.5 35 29 L35 33 Q20 33 5 33 Z" fill="#2C8A57"/>
-          <path d="M20 29 C16.5 24.5 17.5 18 20 14.5 C22.5 18 23.5 24.5 20 29Z" fill="#8FDCAE"/>
-          <path d="M7 21.5 Q20 12.5 33 20" fill="none" stroke="#F7C866" stroke-width="1.5" stroke-linecap="round" opacity=".85"/>
+        <svg class="emblem" viewBox="0 0 44 44" aria-hidden="true">
+          <defs>
+            <linearGradient id="eg-h1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#54B681"/><stop offset="1" stop-color="#1B6B42"/></linearGradient>
+            <linearGradient id="eg-h2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8FDCAE"/><stop offset="1" stop-color="#2C8A57"/></linearGradient>
+            <radialGradient id="eg-sun" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#F7C866"/><stop offset="1" stop-color="#E6A733"/></radialGradient>
+          </defs>
+          <circle cx="22" cy="22" r="20.5" fill="none" stroke="#E6A733" stroke-width="1.2" opacity=".6"/>
+          <circle cx="29.5" cy="14.5" r="4.6" fill="url(#eg-sun)"/>
+          <path d="M5.5 31 Q14 22 22 27 Q30 32 38.5 25 L38.5 36 Q22 36 5.5 36 Z" fill="url(#eg-h1)"/>
+          <path d="M5.5 33.5 Q14.5 27.5 23 32 Q31 35.5 38.5 31 L38.5 36 Q22 36 5.5 36 Z" fill="url(#eg-h2)"/>
+          <path d="M22 31 C18 26 19 19 22 15.5 C25 19 26 26 22 31Z" fill="#EAF5EE"/>
+          <path d="M8 23.5 Q22 14 36 22" fill="none" stroke="#F7C866" stroke-width="1.6" stroke-linecap="round" opacity=".9"/>
         </svg>
         <span class="b-txt">
           <span class="b-1">Common Ground</span>
-          <span class="b-2">Pleasant Hill · powered by
-            <svg class="kc-mark" viewBox="0 0 20 20" aria-hidden="true"><rect width="20" height="20" rx="5" fill="#182C24"/><path d="M6 5v10M6 10l5-5M6 10l5 5" stroke="#F7C866" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
-            Kinetic&nbsp;Culture</span>
+          <span class="b-2">By Pleasant Hill, for Pleasant Hill</span>
         </span>
       </a>
-      <span class="nav-note">A proposal for our parks</span>
+      <a class="kc-lockup" href="https://www.kineticculture.com" target="_blank" rel="noopener" aria-label="Powered by Kinetic Culture">
+        <span class="kc-by">Powered by</span>
+        <svg class="kc-logo" viewBox="0 0 132 28" aria-hidden="true">
+          <rect x="0" y="4" width="22" height="22" rx="6" fill="#182C24"/>
+          <path d="M7 9v12M7 15l6.5-6M7 15l6.5 6" stroke="#F7C866" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          <text x="30" y="14" class="kc-word-1">KINETIC</text>
+          <text x="30" y="24" class="kc-word-2">CULTURE</text>
+        </svg>
+      </a>
     </div>
   </nav>
 
   <!-- ============ HERO ============ -->
   <header class="hero" id="top">
-    <div class="hero-sun" aria-hidden="true"></div>
-    <div class="hero-clouds" aria-hidden="true">
-      <span class="hero-cloud" style="width:180px;height:34px;top:18%;left:8%"></span>
-      <span class="hero-cloud" style="width:120px;height:26px;top:30%;left:62%"></span>
-      <span class="hero-cloud" style="width:90px;height:20px;top:12%;left:40%"></span>
-    </div>
+    <div class="hero-atmos" aria-hidden="true"><span class="orb o1"></span><span class="orb o2"></span><span class="orb o3"></span></div>
+    <div class="hero-sun" aria-hidden="true"><span class="sun-core"></span></div>
     <div class="hero-scene" aria-hidden="true">
-      <svg class="hero-layer" viewBox="0 0 1600 520" preserveAspectRatio="xMidYMax slice">
-        <path d="M0 300 Q400 210 800 270 T1600 250 V520 H0Z" fill="#CFE3D3"/>
-        <path d="M0 350 Q380 270 780 320 T1600 300 V520 H0Z" fill="#A7CDaf"/>
-        <path d="M0 360 Q360 300 760 340 T1600 330 V520 H0Z" fill="#89BD96"/>
-        <path d="M0 410 Q420 350 820 390 T1600 380 V520 H0Z" fill="#4E9A67"/>
-        <path d="M0 450 Q380 405 780 435 T1600 430 V520 H0Z" fill="#2C8A57"/>
-        <!-- oak silhouette -->
-        <g transform="translate(1230 250)" fill="#1B6B42">
-          <rect x="36" y="72" width="11" height="120" rx="3"/>
-          <ellipse cx="42" cy="60" rx="62" ry="48"/>
-          <ellipse cx="0" cy="80" rx="36" ry="30"/>
-          <ellipse cx="84" cy="82" rx="36" ry="28"/>
-        </g>
-        <!-- little play structure / people dots -->
-        <g fill="#1B6B42" opacity=".8">
-          <circle cx="250" cy="430" r="6"/><circle cx="285" cy="422" r="6"/>
-          <rect x="230" y="436" width="70" height="6" rx="3"/>
+      <svg class="hero-layer" viewBox="0 0 1600 600" preserveAspectRatio="xMidYMax slice">
+        <defs>
+          <linearGradient id="h-far" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#DCEBDD"/><stop offset="1" stop-color="#C4DEC9"/></linearGradient>
+          <linearGradient id="h-mid" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#AFD3B6"/><stop offset="1" stop-color="#8FC49B"/></linearGradient>
+          <linearGradient id="h-near" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6DB584"/><stop offset="1" stop-color="#3E9A64"/></linearGradient>
+          <linearGradient id="h-fore" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#379A5F"/><stop offset="1" stop-color="#1E7A48"/></linearGradient>
+          <filter id="soft" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="-6" stdDeviation="10" flood-color="#0E2A20" flood-opacity=".12"/></filter>
+        </defs>
+        <path d="M0 320 Q400 240 800 292 T1600 276 V600 H0Z" fill="url(#h-far)"/>
+        <path d="M0 372 Q380 300 780 344 T1600 330 V600 H0Z" fill="url(#h-mid)" filter="url(#soft)"/>
+        <path d="M0 430 Q440 360 840 402 T1600 392 V600 H0Z" fill="url(#h-near)" filter="url(#soft)"/>
+        <path d="M0 486 Q380 430 780 462 T1600 452 V600 H0Z" fill="url(#h-fore)" filter="url(#soft)"/>
+        <!-- crest highlights -->
+        <path d="M0 372 Q380 300 780 344 T1600 330" fill="none" stroke="#EAF5EE" stroke-width="1.4" opacity=".35"/>
+        <path d="M0 430 Q440 360 840 402 T1600 392" fill="none" stroke="#EAF5EE" stroke-width="1.4" opacity=".25"/>
+        <!-- modern abstract foliage (gradient, not clip-art) -->
+        <g transform="translate(1250 300)">
+          <path d="M60 150 C58 110 58 96 60 70" stroke="#1E7A48" stroke-width="8" stroke-linecap="round" fill="none"/>
+          <ellipse cx="60" cy="58" rx="52" ry="46" fill="url(#h-near)"/>
+          <ellipse cx="24" cy="86" rx="30" ry="26" fill="url(#h-fore)"/>
+          <ellipse cx="96" cy="88" rx="30" ry="24" fill="url(#h-fore)"/>
+          <ellipse cx="60" cy="50" rx="30" ry="26" fill="#8FDCAE" opacity=".7"/>
         </g>
       </svg>
     </div>
+    <div class="hero-grain" aria-hidden="true"></div>
 
     <div class="wrap">
       <span class="k"><span class="d"></span> A community-ownership proposal · For the Rec &amp; Park District &amp; the City</span>
-      <h1 class="display">
-        <span class="line"><span>This is where</span></span>
-        <span class="line"><span>Pleasant Hill</span></span>
-        <span class="line"><span><em>grows up.</em></span></span>
+      <h1 class="display d3d">
+        <span class="line"><span>This is</span></span>
+        <span class="line"><span>our <span class="hl">common</span></span></span>
+        <span class="line"><span class="hl">ground.</span></span>
       </h1>
-      <p class="hero-sub">The fields. The pool. Friday-night games and summer movies in the park. This is where a town becomes a community — and where a childhood is made. <b>Let's make sure it always will be.</b> Not with a new tax — but with the businesses and neighbors who already love this place.</p>
+      <p class="hero-sub">The fields, the pool, the Friday-night games and summer movies in the park — the places every family in Pleasant Hill actually shares. <b>Let's fund their future together</b> — not with a new tax, but with the businesses and neighbors who already love them.</p>
       <button class="hero-cue" id="hero-cue" aria-label="Scroll to begin">
         <span class="ch"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span>
         Here's the idea
@@ -112,21 +125,21 @@
     <div class="glow" aria-hidden="true"></div>
     <div class="wrap">
       <span class="eyebrow vision-eyebrow rv">The big idea</span>
-      <h2 class="rv">What if our parks became a <span class="g">business the whole town</span> owns a piece of?</h2>
-      <p class="vision-lead rv d1">Not sold. Not plastered in billboards. <b>Owned</b> — by the local businesses that want to invest where they live, and the neighbors who want to leave something behind. <b>Common Ground</b> turns Pleasant Hill's most-loved places into a self-sustaining engine that funds their own future. Everyone puts in a little. Everyone wins.</p>
+      <h2 class="d3d-dark rv">What if our parks became something the whole <span class="hl">community owns?</span></h2>
+      <p class="vision-lead rv d1">Not sold. Not plastered in billboards. <b>Owned</b> — by the local businesses that want to invest where they live, and the neighbors who want to leave something behind. <b>Common Ground</b> turns Pleasant Hill's most-loved places into a self-sustaining engine that funds their own future. Everyone puts in a little. Everyone shares in what it builds.</p>
 
       <div class="wins">
-        <div class="win rv">
+        <div class="win rv tilt">
           <div class="w-ic"><svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V8l7-4 7 4v13M9 21v-5h6v5"/></svg></div>
           <h3>Local business wins</h3>
           <p>Roots, not billboards. A genuine, visible place in the community they serve — and marketing dollars that finally stay <em>in</em> Pleasant Hill instead of leaving it.</p>
         </div>
-        <div class="win rv d1">
+        <div class="win rv d1 tilt">
           <div class="w-ic"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-7-10a7 7 0 0 1 14 0c0 5.5-7 10-7 10z"/><circle cx="12" cy="11" r="2.4"/></svg></div>
           <h3>Neighbors win</h3>
-          <p>A brick, a bench, a name on the field your kids play on. A small, real way to leave a mark on the place that raised you — for the next family that shows up.</p>
+          <p>A share, a bench, a name on the field your kids play on. A real way to leave a mark on the place that raised you — for the next family that shows up.</p>
         </div>
-        <div class="win rv d2">
+        <div class="win rv d2 tilt">
           <div class="w-ic"><svg viewBox="0 0 24 24"><path d="M3 3v18h18M7 14l4-4 3 3 6-7"/></svg></div>
           <h3>Pleasant Hill wins</h3>
           <p>New, recurring funding for pools, fields and programs — the projects the community wants — without asking a single resident to pay another cent in taxes.</p>
@@ -141,11 +154,11 @@
       <div class="opp-grid">
         <div class="opp-copy rv-l">
           <span class="eyebrow">Why now</span>
-          <h2>This town already loves these places. It's just never been asked to invest in them — the <span class="lit-g">right way.</span></h2>
+          <h2 class="d3d">This community already loves these places. It's just never been asked to invest in them — the <span class="hl">right way.</span></h2>
           <p>When residents were asked to fund a $77M parks bond, <b>63% said yes.</b> It didn't clear the two-thirds bar — but the message was unmistakable: <b>Pleasant Hill deeply cares about its parks.</b> The appetite isn't in question.</p>
-          <p>What's missing is a way to fund these places that doesn't depend on a supermajority — or a single taxpayer dollar. Meanwhile, the District's most valuable assets sit in front of 100,000 people a year, <b>quietly unmonetized.</b> The demand is already here. The bridge to it isn't built yet.</p>
+          <p>What's missing is a way to fund these places that doesn't depend on a supermajority — or a single taxpayer dollar. Meanwhile, the Rec &amp; Park District's most valuable assets sit in front of 100,000 people a year, <b>quietly unmonetized.</b> The demand is already here. The bridge to it isn't built yet.</p>
         </div>
-        <div class="gapcard rv-r">
+        <div class="gapcard rv-r tilt">
           <h4>The District's audience — who's paying to reach it</h4>
           <div class="gaprow">
             <div class="gr-top"><span class="gr-name">Event sponsorships (today)</span><span class="gr-val">A start</span></div>
@@ -156,10 +169,10 @@
             <div class="gr-track"><div class="gr-fill untapped" data-w="82"></div></div>
           </div>
           <div class="gaprow">
-            <div class="gr-top"><span class="gr-name">Residents who'd chip in for a brick or a bench</span><span class="gr-val">Never asked</span></div>
+            <div class="gr-top"><span class="gr-name">Residents who'd chip in for a share or a bench</span><span class="gr-val">Never asked</span></div>
             <div class="gr-track"><div class="gr-fill untapped" data-w="70"></div></div>
           </div>
-          <p class="gap-note">You've already proven businesses want in — the festival beer garden, the kids zone, the PHBA banners. <b>Common Ground turns those one-off yeses into a real, year-round program.</b></p>
+          <p class="gap-note">You've already proven businesses want in — the festival beer garden, the kids zone, the PHBA banners. <b>Common Ground turns those one-off yeses into a real, year-round strategy.</b></p>
         </div>
       </div>
     </div>
@@ -170,9 +183,9 @@
     <div class="wrap">
       <div class="stat-grid">
         <div class="stat rv"><div class="num" data-target="100000" data-suffix="+">0</div><div class="lbl">People served / year</div><div class="sub">The audience already exists.</div></div>
-        <div class="stat rv d1"><div class="num g" data-target="269">0</div><div class="lbl">Acres · 11 parks</div><div class="sub">Assets waiting to work harder.</div></div>
+        <div class="stat rv d1"><div class="num" data-target="269">0</div><div class="lbl">Acres · 11 parks</div><div class="sub">Assets waiting to work harder.</div></div>
         <div class="stat rv d2"><div class="num" data-target="5000" data-suffix="+">0</div><div class="lbl">At a single festival</div><div class="sub">Where sponsors already line up.</div></div>
-        <div class="stat rv d3"><div class="num g" data-prefix="$" data-target="0">0</div><div class="lbl">New taxes required</div><div class="sub">Not now. Not ever.</div></div>
+        <div class="stat rv d3"><div class="num" data-prefix="$" data-target="0">0</div><div class="lbl">New taxes required</div><div class="sub">Not now. Not ever.</div></div>
       </div>
     </div>
   </section>
@@ -182,42 +195,38 @@
     <div class="wrap">
       <div class="shead rv">
         <span class="eyebrow gold">How it works</span>
-        <h2>Simple enough to <span class="lit">survive a public meeting.</span></h2>
-        <p>No upfront cost. No new staff. No General Fund exposure. Kinetic Culture builds and runs the program — the District keeps control and keeps most of every dollar.</p>
+        <h2 class="d3d">Not just a program to run — a <span class="hl">strategy to own.</span></h2>
+        <p>No upfront cost. No new staff. No General Fund exposure. Kinetic Culture builds and runs it — but the real value is the strategy behind it: pricing the right assets, courting the right partners, and compounding a few good relationships into outsized, lasting outcomes. The District keeps control and keeps most of every dollar.</p>
       </div>
 
       <div class="idea-steps">
-        <div class="istep rv">
-          <div class="is-n">01</div>
+        <div class="istep rv tilt">
           <div class="is-ic"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h10"/><rect x="2.5" y="3.5" width="19" height="17" rx="2"/></svg></div>
           <h3>Package</h3>
-          <p>We inventory the assets — fields, scoreboards, events, digital reach, naming, resident dedications — and price them like the real opportunities they are.</p>
+          <p>We inventory the assets — fields, scoreboards, events, digital reach, naming, resident shares — and price them like the real opportunities they are.</p>
         </div>
-        <div class="istep rv d1">
-          <div class="is-n">02</div>
+        <div class="istep rv d1 tilt">
           <div class="is-ic"><svg viewBox="0 0 24 24"><path d="M16 11a4 4 0 1 0-8 0M2 21a7 7 0 0 1 20 0M12 3v2"/></svg></div>
           <h3>Invite</h3>
           <p>We bring the partners — the local businesses that want roots here, and the families who want a piece of it. Everyone gets a way in, at every level.</p>
         </div>
-        <div class="istep rv d2">
-          <div class="is-n">03</div>
+        <div class="istep rv d2 tilt">
           <div class="is-ic"><svg viewBox="0 0 24 24"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
           <h3>Reinvest</h3>
           <p>The money comes home. Most of every dollar flows straight back into Pleasant Hill's parks and programs — the projects this community actually wants.</p>
         </div>
-        <div class="istep rv d3">
-          <div class="is-n">04</div>
+        <div class="istep rv d3 tilt">
           <div class="is-ic"><svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8M21 7v6M21 7h-6"/></svg></div>
-          <h3>Grow</h3>
-          <p>Partnerships renew and grow year over year with demand. A single good season becomes a permanent, compounding source of community funding.</p>
+          <h3>Compound</h3>
+          <p>Partnerships renew and grow each year with demand. Managed with real strategy, a single good season becomes a permanent, compounding source of community funding.</p>
         </div>
       </div>
 
       <div class="reinvest rv-scale">
         <div class="ri-copy">
           <span class="eyebrow inv">Where the money goes</span>
-          <h3 style="margin-top:1rem">Most of every dollar <span class="lit">stays right here.</span></h3>
-          <p>For every dollar raised, the lion's share goes straight back into the District's parks and programs. The remainder funds the team that builds and runs the program — <b>paid only after the money is raised, never before.</b> No cost to the District. No cost to the taxpayer.</p>
+          <h3 style="margin-top:1rem">Most of every dollar <span class="hl">stays right here.</span></h3>
+          <p>For every dollar raised, the lion's share goes straight back into the District's parks and programs. The remainder funds the team that builds and runs the strategy — <b>paid only after the money is raised, never before.</b> No cost to the District. No cost to the taxpayer.</p>
         </div>
         <div>
           <div class="donut">
@@ -230,7 +239,7 @@
           </div>
           <div class="donut-legend">
             <span class="dleg"><i style="background:#F7C866"></i> Pleasant Hill's parks</span>
-            <span class="dleg"><i style="background:#54B681"></i> Runs the program</span>
+            <span class="dleg"><i style="background:#54B681"></i> Runs the strategy</span>
           </div>
         </div>
       </div>
@@ -242,7 +251,7 @@
     <div class="wrap">
       <div class="shead rv">
         <span class="eyebrow">Who invests</span>
-        <h2>Everyone gets a way in —<br>from a <span class="lit">$100 brick</span> to a <span class="lit-g">$25K partnership.</span></h2>
+        <h2 class="d3d">Everyone gets a way in —<br>from a <span class="hl">$50 share</span> to a <span class="hl">$25K partnership.</span></h2>
         <p>This only works if it belongs to the whole community. So there's a door at every level — for the biggest employer in town and the family that just wants their name on a bench.</p>
       </div>
 
@@ -254,14 +263,14 @@
       <!-- businesses -->
       <div class="invest-pane on" data-pane="biz">
         <div class="tier-grid">
-          <div class="tier rv" data-tier="silver" tabindex="0" role="button" aria-label="Silver partner details">
+          <div class="tier rv tilt" data-tier="silver" tabindex="0" role="button" aria-label="Silver partner details">
             <div class="t-name">Silver</div>
             <div class="t-price">$5,000<span> / year</span></div>
             <p class="t-desc">The local champion — the orthodontist, the HVAC company, the family restaurant that wants to show up for its neighbors.</p>
             <ul><li>Field &amp; fence signage at a home park</li><li>Logo on District digital &amp; newsletter</li><li>Named presence at a community event</li></ul>
             <span class="t-more">See what a year looks like <span class="arw">&rarr;</span></span>
           </div>
-          <div class="tier feature rv d1" data-tier="presenting" tabindex="0" role="button" aria-label="Presenting partner details">
+          <div class="tier feature rv d1 tilt" data-tier="presenting" tabindex="0" role="button" aria-label="Presenting partner details">
             <div class="t-tag">Anchor</div>
             <div class="t-name">Presenting</div>
             <div class="t-price">$25,000<span> / year</span></div>
@@ -269,7 +278,7 @@
             <ul><li>Presenting a signature event or tournament</li><li>Premium naming on a marquee asset</li><li>Year-round digital, field &amp; on-site presence</li><li>Category exclusivity &amp; first right to renew</li></ul>
             <span class="t-more">See what a year looks like <span class="arw">&rarr;</span></span>
           </div>
-          <div class="tier rv d2" data-tier="gold" tabindex="0" role="button" aria-label="Gold partner details">
+          <div class="tier rv d2 tilt" data-tier="gold" tabindex="0" role="button" aria-label="Gold partner details">
             <div class="t-name">Gold</div>
             <div class="t-price">$10,000<span> / year</span></div>
             <p class="t-desc">The established local brand — the dealership, the credit union, the builder investing in its own backyard.</p>
@@ -277,39 +286,58 @@
             <span class="t-more">See what a year looks like <span class="arw">&rarr;</span></span>
           </div>
         </div>
-        <p class="invest-note"><b>These are annual partnerships, not sales.</b> No business ever "owns" a public asset — a partner supports the community for a year and renews, and the value of each opportunity grows year over year with demand and inflation. The District approves every partner and every placement.</p>
+        <p class="invest-note"><b>These are annual partnerships, not sales.</b> No business ever "owns" a public asset — a partner supports the community for a year and renews, and the value of each opportunity grows year over year with demand. The Board approves every partner and every placement.</p>
       </div>
 
       <!-- residents -->
       <div class="invest-pane" data-pane="res">
-        <div class="resident-grid">
-          <div class="rcard rv">
+        <div class="resident-grid six">
+          <div class="rcard rv tilt">
+            <div class="rc-ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="9" r="5"/><path d="M9 13.5 8 22l4-2 4 2-1-8.5"/></svg></div>
+            <h3>Community Share</h3>
+            <div class="rc-price">from $50</div>
+            <p>A numbered share certificate in the park you helped build — and your name in the public Founders' Ledger. Symbolic ownership, real belonging.</p>
+          </div>
+          <div class="rcard rv d1 tilt">
             <div class="rc-ic"><svg viewBox="0 0 24 24"><rect x="3" y="9" width="18" height="10" rx="1.5"/><path d="M3 13h18M8 9V6h8v3"/></svg></div>
-            <h3>Engraved paver</h3>
+            <h3>Engraved Paver</h3>
             <div class="rc-price">from $100</div>
-            <p>Your family's name set in a walkway at a park you helped renew — permanent, and impossible to miss.</p>
+            <p>Your family's name set into a walkway at a park you helped renew — permanent, underfoot, and impossible to miss.</p>
           </div>
-          <div class="rcard rv d1">
-            <div class="rc-ic"><svg viewBox="0 0 24 24"><path d="M4 18h16M6 18v-4M18 18v-4M4 14h16v-2H4zM7 12V9M17 12V9M9 9h6V7H9z"/></svg></div>
-            <h3>Bench or tree</h3>
-            <div class="rc-price">from $1,500</div>
-            <p>Dedicate a bench along a trail or a tree that will outlive us all — in honor of someone, or just because it's home.</p>
-          </div>
-          <div class="rcard rv d2">
-            <div class="rc-ic"><svg viewBox="0 0 24 24"><path d="M4 21V5a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v16M4 21h16M9 8h6M9 12h6M9 16h4"/></svg></div>
-            <h3>Founders' Wall</h3>
+          <div class="rcard rv d2 tilt">
+            <div class="rc-ic"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-7-10a7 7 0 0 1 14 0c0 5.5-7 10-7 10z"/><path d="M9.5 10.5a2.5 2.5 0 0 1 5 0"/></svg></div>
+            <h3>Send a Kid</h3>
             <div class="rc-price">from $250</div>
-            <p>Join the wall of neighbors who got a new park project off the ground — the people who were there at the start.</p>
+            <p>Send a neighbor's child to summer camp or swim lessons in your family's name. Belonging, paid forward to the next kid.</p>
           </div>
-          <div class="rcard rv d3">
+          <div class="rcard rv tilt">
+            <div class="rc-ic"><svg viewBox="0 0 24 24"><path d="M4 18h16M6 18v-4M18 18v-4M4 14h16v-2H4z"/><path d="M15 8a3 3 0 1 0-6 0M12 5V3"/></svg></div>
+            <h3>Storyteller Bench</h3>
+            <div class="rc-price">from $1,500</div>
+            <p>A bench or tree with a tap-to-hear dedication — your family's story, in your own voice, waiting on the trail for whoever sits down.</p>
+          </div>
+          <div class="rcard rv d1 tilt">
+            <div class="rc-ic"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="15" rx="2"/><path d="M8 21h8M3 9h18M7 13l2.5 2.5L14 11"/></svg></div>
+            <h3>Adopt-a-Season</h3>
+            <div class="rc-price">from $2,500</div>
+            <p>Put your family's name on a whole summer of Movies in the Park, or a Little League season — "presented by the Whitcombs."</p>
+          </div>
+          <div class="rcard rv d2 tilt">
             <div class="rc-ic"><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3L22 9.2l-5 4.6 1.3 6.9L12 17.5 5.7 20.7 7 13.8l-5-4.6 7.1-.9z"/></svg></div>
             <h3>Legacy Circle</h3>
             <div class="rc-price">$5,000+</div>
-            <p>Underwrite a scholarship, a field, or a season of a program — and be recognized as a lasting patron of Pleasant Hill's parks.</p>
+            <p>Underwrite a field, a scholarship, or a season of a program — with first-pitch and ribbon-cutting honors, and a day in the park in your name.</p>
           </div>
         </div>
-        <p class="resident-cap">A park you helped build is a park you never stop caring about.</p>
       </div>
+    </div>
+  </section>
+
+  <!-- ============ PULL QUOTE ============ -->
+  <section class="pullquote">
+    <div class="wrap">
+      <span class="pq-mark" aria-hidden="true">&ldquo;</span>
+      <p class="pq rv">A park you helped build is a park you <span class="hl">never stop caring about.</span></p>
     </div>
   </section>
 
@@ -317,8 +345,8 @@
   <section class="assets pad-y" id="assets">
     <div class="wrap">
       <div class="shead rv">
-        <span class="eyebrow inv">The inventory</span>
-        <h2>What's ready to work harder —<br>and <span class="lit-s">who would back it.</span></h2>
+        <span class="eyebrow gold">The inventory</span>
+        <h2 class="d3d-dark">What's ready to work harder —<br>and <span class="hl">who would back it.</span></h2>
         <p>Every category below already exists in Pleasant Hill. Select one to see what a year of it is worth — and exactly which local partners it's built for.</p>
       </div>
 
@@ -346,7 +374,7 @@
           </button>
           <button class="asset-tab" data-asset="residents" role="tab" aria-selected="false">
             <span class="at-ic"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-7-10a7 7 0 0 1 14 0c0 5.5-7 10-7 10z"/><circle cx="12" cy="11" r="2.2"/></svg></span>
-            <span><span class="at-name">Resident Legacy</span><span class="at-val">$100–$5K+ each</span></span>
+            <span><span class="at-name">Resident Legacy</span><span class="at-val">$50–$5K+ each</span></span>
           </button>
         </div>
 
@@ -382,9 +410,9 @@
             <div class="av-buyers"><div class="avb-lbl">Built for partners like</div><div class="avb-list"><b>John Muir Health</b><b>Diablo Valley College</b><b>Regional banks</b><b>Legacy family businesses</b></div></div>
           </div>
           <div class="asset-view" data-asset="residents">
-            <div class="av-top"><h3>Resident Legacy</h3><div class="av-val"><div class="v">$100–$5K+</div><div class="k">per dedication</div></div></div>
-            <p>The most important partners of all: the neighbors. Engraved pavers, dedicated benches and trees, a Founders' Wall, and a Legacy Circle let any family put their name — or a loved one's — on the place that raised their kids. Hundreds of small gifts add up to real capital, and to something money can't buy: <b>ownership.</b></p>
-            <div class="av-items"><span>Engraved pavers</span><span>Bench &amp; tree dedications</span><span>Founders' Wall</span><span>Memorial gifts</span><span>Legacy Circle</span></div>
+            <div class="av-top"><h3>Resident Legacy</h3><div class="av-val"><div class="v">$50–$5K+</div><div class="k">per family</div></div></div>
+            <p>The most important partners of all: the neighbors. Community Shares, engraved pavers, storyteller benches, "Send a Kid" scholarships and Adopt-a-Season honors let any family put their name — or a loved one's — on the place that raised their kids. Hundreds of small gifts add up to real capital, and to something money can't buy: <b>ownership.</b></p>
+            <div class="av-items"><span>Community Shares</span><span>Engraved pavers</span><span>Storyteller benches</span><span>Send-a-Kid scholarships</span><span>Legacy Circle</span></div>
             <div class="av-buyers"><div class="avb-lbl">Built for</div><div class="avb-list"><b>Families</b><b>Alumni of PHBA &amp; the pool</b><b>Longtime residents</b><b>In memoriam</b></div></div>
           </div>
         </div>
@@ -397,7 +425,7 @@
     <div class="wrap">
       <div class="shead rv">
         <span class="eyebrow gold">The numbers</span>
-        <h2>Year one is a <span class="lit-g">pilot.</span><br>Year five is <span class="lit">a Pleasant Hill institution.</span></h2>
+        <h2 class="d3d">Year one is a <span class="hl">pilot.</span><br>Year five is a Pleasant Hill <span class="hl">institution.</span></h2>
         <p>Pick a scenario. Tap any year — the breakdown below updates to show how that year is built. Every figure is modeled against real sponsorship and tournament benchmarks.</p>
       </div>
 
@@ -435,7 +463,7 @@
             <div class="bd-row"><span class="bd-name">Signature tournament</span><div class="bd-track"><div class="bd-fill" style="background:#F7C866" data-pct="26"></div></div><span class="bd-amt">$26K</span></div>
             <div class="bd-row"><span class="bd-name">Naming partnership</span><div class="bd-track"><div class="bd-fill" style="background:#2C8A57" data-pct="20"></div></div><span class="bd-amt">$20K</span></div>
             <div class="bd-row"><span class="bd-name">Community event</span><div class="bd-track"><div class="bd-fill" style="background:#54B681" data-pct="12"></div></div><span class="bd-amt">$12K</span></div>
-            <div class="bd-row"><span class="bd-name">Resident legacy &amp; vendors</span><div class="bd-track"><div class="bd-fill" style="background:#3E9EC4" data-pct="8"></div></div><span class="bd-amt">$8K</span></div>
+            <div class="bd-row"><span class="bd-name">Resident shares &amp; vendors</span><div class="bd-track"><div class="bd-fill" style="background:#B87E1E" data-pct="8"></div></div><span class="bd-amt">$8K</span></div>
           </div>
           <p class="bd-note" id="bd-note">Year 1 stays deliberately narrow — one of each — to prove the model before scaling. Every figure sits inside the ranges these streams produce at comparable agencies.</p>
         </div>
@@ -448,24 +476,24 @@
     <div class="wrap">
       <div class="shead rv">
         <span class="eyebrow">The proof</span>
-        <h2>This isn't a theory.<br>It's already working — <span class="lit-g">including here.</span></h2>
+        <h2 class="d3d">This isn't a theory.<br>It's already working — <span class="hl">including here.</span></h2>
       </div>
 
       <div class="already rv-scale">
         <div class="a-badge"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></div>
         <div>
           <h3>Pleasant Hill has already proven the demand.</h3>
-          <p>The District already sells event sponsorships — the festival beer garden, the kids zone, the main stage — to businesses eager to reach 5,000+ neighbors. PHBA has run on local business sponsorships <b>since 1958</b>. The appetite is real and local. What's missing isn't interest — it's a <b>professional, year-round program</b> that captures it across every asset, and invites residents in too.</p>
+          <p>The Rec &amp; Park District already sells event sponsorships — the festival beer garden, the kids zone, the main stage — to businesses eager to reach 5,000+ neighbors. PHBA has run on local business sponsorships <b>since 1958</b>. The appetite is real and local. What's missing isn't interest — it's a <b>professional, year-round strategy</b> that captures it across every asset, and invites residents in too.</p>
         </div>
       </div>
 
       <div class="bench-grid">
-        <div class="bcard rv"><div class="bc-num">$175K→$2M</div><div class="bc-t">A naming partnership that grew</div><div class="bc-d">One district's naming relationship opened at $175K/year and grew past $2M over its term — while its tournaments drove $5.19M in local impact in a single year.</div><div class="bc-src">Rock River Current, 2025</div></div>
-        <div class="bcard rv d1"><div class="bc-num">$30K / yr</div><div class="bc-t">One municipal ballfield</div><div class="bc-d">In 2026 a bank backed a single city baseball field for $210K over 7 years — a directly comparable, small-market deal for the exact assets Pleasant Hill has.</div><div class="bc-src">Sioux City Journal, 2026</div></div>
-        <div class="bcard rv d2"><div class="bc-num">$1M+ / yr</div><div class="bc-t">A mature park program</div><div class="bc-d">Cleveland Metroparks generates over $1M a year in sponsorships — proof of the ceiling once a program is built and run professionally.</div><div class="bc-src">NRPA Marketing Report</div></div>
-        <div class="bcard rv"><div class="bc-num">Kaiser + AllTrails</div><div class="bc-t">It's happening next door</div><div class="bc-d">The East Bay Regional Park District's foundation runs corporate partnerships like the Trails Challenge with Kaiser Permanente and AllTrails. The appetite is regional and real.</div><div class="bc-src">Regional Parks Foundation</div></div>
-        <div class="bcard rv d1"><div class="bc-num">$40B</div><div class="bc-t">The youth-sports economy</div><div class="bc-d">Families spend ~$40B a year on youth sports; sports tourism drives $47B in direct spending — an untapped market sitting on Pleasant Hill's doorstep.</div><div class="bc-src">Aspen Institute · SETA 2025</div></div>
-        <div class="bcard rv d2"><div class="bc-num">27%</div><div class="bc-t">What most agencies already earn</div><div class="bc-d">The typical U.S. parks agency already recovers 27% of its operating cost from non-tax revenue. Pleasant Hill's untapped share is the whole opportunity.</div><div class="bc-src">NRPA 2025 Agency Review</div></div>
+        <div class="bcard rv tilt"><div class="bc-num">$175K→$2M</div><div class="bc-t">A naming partnership that grew</div><div class="bc-d">One district's naming relationship opened at $175K/year and grew past $2M over its term — while its tournaments drove $5.19M in local impact in a single year.</div><div class="bc-src">Rock River Current, 2025</div></div>
+        <div class="bcard rv d1 tilt"><div class="bc-num">$30K / yr</div><div class="bc-t">One municipal ballfield</div><div class="bc-d">In 2026 a bank backed a single city baseball field for $210K over 7 years — a directly comparable, small-market deal for the exact assets Pleasant Hill has.</div><div class="bc-src">Sioux City Journal, 2026</div></div>
+        <div class="bcard rv d2 tilt"><div class="bc-num">$1M+ / yr</div><div class="bc-t">A mature park program</div><div class="bc-d">Cleveland Metroparks generates over $1M a year in sponsorships — proof of the ceiling once a program is built and run professionally.</div><div class="bc-src">NRPA Marketing Report</div></div>
+        <div class="bcard rv tilt"><div class="bc-num">Kaiser + AllTrails</div><div class="bc-t">It's happening next door</div><div class="bc-d">The East Bay Regional Park District's foundation runs corporate partnerships like the Trails Challenge with Kaiser Permanente and AllTrails. The appetite is regional and real.</div><div class="bc-src">Regional Parks Foundation</div></div>
+        <div class="bcard rv d1 tilt"><div class="bc-num">$40B</div><div class="bc-t">The youth-sports economy</div><div class="bc-d">Families spend ~$40B a year on youth sports; sports tourism drives $47B in direct spending — an untapped market sitting on Pleasant Hill's doorstep.</div><div class="bc-src">Aspen Institute · SETA 2025</div></div>
+        <div class="bcard rv d2 tilt"><div class="bc-num">27%</div><div class="bc-t">What most agencies already earn</div><div class="bc-d">The typical U.S. parks agency already recovers 27% of its operating cost from non-tax revenue. Pleasant Hill's untapped share is the whole opportunity.</div><div class="bc-src">NRPA 2025 Agency Review</div></div>
       </div>
       <p class="bench-note">Figures are drawn from published reporting on comparable agencies and are shown to illustrate the model's range; actual Pleasant Hill results would be governed by a partnership agreement and local conditions.</p>
     </div>
@@ -478,22 +506,22 @@
       <div class="why-grid">
         <div class="rv-l">
           <span class="eyebrow inv">Who's behind this</span>
-          <h2>For fifteen years, my job has been to make the world's biggest brands <span class="lit">show up</span> for the moments people care about.</h2>
+          <h2 class="d3d-dark">For fifteen years, my job has been to make the world's biggest brands <span class="hl">show up</span> for the moments people care about.</h2>
           <p class="why-lead">I'm bringing that home.</p>
           <div class="why-body">
-            <p>I started at the <b>NFL</b> — Super Bowls, Drafts, and launching the NFL Legends Community to serve 3,500 retired players. Then <b>Cisco</b>, <b>Logitech</b> — where I built and ran a <b>$10M+ global sponsorship portfolio that drove $35M+ in revenue</b> — <b>Google</b>, and now <b>ServiceNow</b>, where I own a $20M+ global event investment framework. Fifteen years doing exactly one thing: turning relationships and moments into measurable value.</p>
-            <p>I didn't build Common Ground for a client. I built it for the community my family calls home — because when I finished the <b>Local Government Academy</b>, I couldn't stop thinking about how much this town gives its kids, and how little we've ever asked the people who love it to give back. <b>My kids will grow up on these fields.</b> I want to hand them a Pleasant Hill that's even better than the one I found.</p>
+            <p>I started at the <b>NFL</b> — Super Bowls, Drafts, and building the <b>NFL Legends Community</b> to take care of 3,500 retired players after the lights went down. Then <b>Cisco</b>, where I led inclusion and leadership work reaching 2,400+ people; <b>Logitech</b>, where I built and ran a <b>$10M+ global sponsorship portfolio driving $35M+ in revenue</b>; then <b>Google</b>, and now <b>ServiceNow</b>. Fifteen years turning relationships and moments into measurable value — and a Webby along the way.</p>
+            <p>But the work I'm proudest of has always been the community part — mentoring with <b>Big Brothers Big Sisters</b>, building programs that make people feel like they belong. That's really what Common Ground is. I didn't build it for a client; I built it for the community my family calls home, because <b>my kids will grow up on these fields</b> — and I want to hand them a Pleasant Hill that's even better than the one I found.</p>
           </div>
           <div class="sig">Let's build something that outlasts all of us.<small>Jason Whitcomb · Founder, Kinetic Culture</small></div>
           <div class="roster"><span>NFL</span><span>Cisco</span><span>Logitech</span><span>Google</span><span>ServiceNow</span><span>Kinetic Culture</span></div>
         </div>
 
-        <div class="cred rv-r">
+        <div class="cred rv-r tilt">
           <h3>The receipts</h3>
           <div class="cred-item"><span class="ci-n">$10M+</span><div><div class="ci-t">Sponsorship portfolio, built &amp; run</div><div class="ci-d">At Logitech — driving $35M+ in influenced revenue across three global regions.</div></div></div>
-          <div class="cred-item"><span class="ci-n">$20M+</span><div><div class="ci-t">Event investment framework</div><div class="ci-d">Now at ServiceNow — the exact discipline of pricing assets and proving return.</div></div></div>
-          <div class="cred-item"><span class="ci-n">3,500</span><div><div class="ci-t">NFL Legends Community</div><div class="ci-d">Launched a program serving thousands of retired players — built to last, not to launch.</div></div></div>
-          <div class="cred-item"><span class="ci-n">2026</span><div><div class="ci-t">Fred Luddy Award for Marketing Excellence</div><div class="ci-d">Plus a Webby, and a decade of brand &amp; partnership recognition.</div></div></div>
+          <div class="cred-item"><span class="ci-n">3,500</span><div><div class="ci-t">NFL Legends Community</div><div class="ci-d">Built a program to care for thousands of retired players — community, not just marketing.</div></div></div>
+          <div class="cred-item"><span class="ci-n">2,400+</span><div><div class="ci-t">Inclusion &amp; belonging at Cisco</div><div class="ci-d">Led leadership and inclusion work reaching thousands of high-potential people.</div></div></div>
+          <div class="cred-item"><span class="ci-n">Webby</span><div><div class="ci-t">Award-winning work</div><div class="ci-d">A Webby winner, and a decade of brand &amp; partnership recognition.</div></div></div>
           <div class="cred-item"><span class="ci-n">Home</span><div><div class="ci-t">Personal stake</div><div class="ci-d">This is my community. My incentive is a program Pleasant Hill is proud of for a generation.</div></div></div>
         </div>
       </div>
@@ -505,7 +533,7 @@
     <div class="wrap">
       <div class="shead rv">
         <span class="eyebrow">Built for the whole room</span>
-        <h2>A good idea has to answer <span class="lit-g">everyone</span> at the table.</h2>
+        <h2 class="d3d">A good idea has to answer <span class="hl">everyone</span> at the table.</h2>
         <p>Select a seat to see Common Ground through that person's lens — because this only moves forward if it works for all of them.</p>
       </div>
 
@@ -513,10 +541,10 @@
         <div class="room-people" role="tablist" aria-label="Decision-makers">
           <button class="person on" data-person="lacy" role="tab" aria-selected="true"><span class="p-av">ML</span><span class="p-txt"><span class="p-name">Michelle Lacy</span><span class="p-role">General Manager, Rec &amp; Park District</span></span></button>
           <button class="person" data-person="wurst" role="tab" aria-selected="false"><span class="p-av">DW</span><span class="p-txt"><span class="p-name">Derek Wurst</span><span class="p-role">Board Chair</span></span></button>
-          <button class="person" data-person="bonato" role="tab" aria-selected="false"><span class="p-av">SB</span><span class="p-txt"><span class="p-name">Sandra Bonato</span><span class="p-role">Vice Chair</span></span></button>
-          <button class="person" data-person="glover" role="tab" aria-selected="false"><span class="p-av">BG</span><span class="p-txt"><span class="p-name">Bobby Glover</span><span class="p-role">Secretary</span></span></button>
-          <button class="person" data-person="vinson" role="tab" aria-selected="false"><span class="p-av">SV</span><span class="p-txt"><span class="p-name">Sandy Vinson</span><span class="p-role">Director</span></span></button>
-          <button class="person" data-person="tran" role="tab" aria-selected="false"><span class="p-av">QT</span><span class="p-txt"><span class="p-name">Quy Tran</span><span class="p-role">Director</span></span></button>
+          <button class="person" data-person="bonato" role="tab" aria-selected="false"><span class="p-av">SB</span><span class="p-txt"><span class="p-name">Sandra Bonato</span><span class="p-role">Board Vice Chair</span></span></button>
+          <button class="person" data-person="glover" role="tab" aria-selected="false"><span class="p-av">BG</span><span class="p-txt"><span class="p-name">Bobby Glover</span><span class="p-role">Board Secretary</span></span></button>
+          <button class="person" data-person="vinson" role="tab" aria-selected="false"><span class="p-av">SV</span><span class="p-txt"><span class="p-name">Sandy Vinson</span><span class="p-role">Board Director</span></span></button>
+          <button class="person" data-person="tran" role="tab" aria-selected="false"><span class="p-av">QT</span><span class="p-txt"><span class="p-name">Quy Tran</span><span class="p-role">Board Director</span></span></button>
           <button class="person" data-person="bindernagel" role="tab" aria-selected="false"><span class="p-av">EB</span><span class="p-txt"><span class="p-name">Ethan Bindernagel</span><span class="p-role">City Manager (partner)</span></span></button>
         </div>
 
@@ -530,8 +558,8 @@
           <div class="room-view" data-person="wurst">
             <div class="rv-lens">Through the chair's lens</div>
             <h3>The projects the community wants — <span class="ital">funded</span> a new way.</h3>
-            <p>You've led this board while a community that clearly loves its parks looked for a way to fund their future. This is that way: a path to the pool, the fields and the capital projects residents want — <b>built with community and business dollars instead of a property-tax increase</b>, and without waiting on a two-thirds vote.</p>
-            <div class="rv-hook">"A funding path the whole board can stand behind."</div>
+            <p>You've led this Board while a community that clearly loves its parks looked for a way to fund their future. This is that way: a path to the pool, the fields and the capital projects residents want — <b>built with community and business dollars instead of a property-tax increase</b>, and without waiting on a two-thirds vote.</p>
+            <div class="rv-hook">"A funding path the whole Board can stand behind."</div>
           </div>
           <div class="room-view" data-person="bonato">
             <div class="rv-lens">Through the governance &amp; legal lens</div>
@@ -554,8 +582,8 @@
           <div class="room-view" data-person="tran">
             <div class="rv-lens">Through the district-wide lens</div>
             <h3>Every park, every neighborhood — a <span class="ital">shared</span> win.</h3>
-            <p>The value here isn't concentrated in one facility; it's a new, flexible funding base the whole District can point at its highest priorities. It's a way to keep investing in parks, programs and facilities across Pleasant Hill <b>without asking residents for more</b> — with the board deciding where the new dollars do the most good.</p>
-            <div class="rv-hook">"New revenue the whole board gets to direct."</div>
+            <p>The value here isn't concentrated in one facility; it's a new, flexible funding base the whole District can point at its highest priorities. It's a way to keep investing in parks, programs and facilities across Pleasant Hill <b>without asking residents for more</b> — with the Board deciding where the new dollars do the most good.</p>
+            <div class="rv-hook">"New revenue the whole Board gets to direct."</div>
           </div>
           <div class="room-view" data-person="bindernagel">
             <div class="rv-lens">Through the City's economic-development lens</div>
@@ -573,7 +601,7 @@
     <div class="glow" aria-hidden="true"></div>
     <div class="wrap">
       <span class="eyebrow inv rv">The ask</span>
-      <h2 class="rv">Let's build it <span class="lit">together.</span></h2>
+      <h2 class="d3d-dark rv">Let's build it <span class="hl">together.</span></h2>
       <p class="lede rv d1">No budget line. No vote tonight. Just <b>one working session</b> — with the District, and the City alongside — to pressure-test this, pick the first few assets, and design the agreement together. If it works the way the comparables say it will, Pleasant Hill will have built something other towns come to copy.</p>
 
       <div class="ask-q rv d1">
@@ -619,13 +647,17 @@
   <footer class="foot">
     <div class="wrap">
       <div class="foot-brand">
-        <svg class="emblem" viewBox="0 0 40 40" aria-hidden="true">
-          <circle cx="20" cy="20" r="18.5" fill="none" stroke="#E6A733" stroke-width="1.1" opacity=".55"/>
-          <circle cx="27" cy="13" r="4.4" fill="#F7C866"/>
-          <path d="M5 29 Q12.5 20.5 20 25.5 Q27.5 30.5 35 23.5 L35 33 Q20 33 5 33 Z" fill="#1B6B42"/>
-          <path d="M5 31.5 Q13 25.5 21 30 Q28.5 33.5 35 29 L35 33 Q20 33 5 33 Z" fill="#2C8A57"/>
-          <path d="M20 29 C16.5 24.5 17.5 18 20 14.5 C22.5 18 23.5 24.5 20 29Z" fill="#8FDCAE"/>
-          <path d="M7 21.5 Q20 12.5 33 20" fill="none" stroke="#F7C866" stroke-width="1.5" stroke-linecap="round" opacity=".85"/>
+        <svg class="emblem" viewBox="0 0 44 44" aria-hidden="true">
+          <defs>
+            <linearGradient id="fg-h1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#54B681"/><stop offset="1" stop-color="#1B6B42"/></linearGradient>
+            <linearGradient id="fg-h2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8FDCAE"/><stop offset="1" stop-color="#2C8A57"/></linearGradient>
+          </defs>
+          <circle cx="22" cy="22" r="20.5" fill="none" stroke="#E6A733" stroke-width="1.2" opacity=".6"/>
+          <circle cx="29.5" cy="14.5" r="4.6" fill="#F7C866"/>
+          <path d="M5.5 31 Q14 22 22 27 Q30 32 38.5 25 L38.5 36 Q22 36 5.5 36 Z" fill="url(#fg-h1)"/>
+          <path d="M5.5 33.5 Q14.5 27.5 23 32 Q31 35.5 38.5 31 L38.5 36 Q22 36 5.5 36 Z" fill="url(#fg-h2)"/>
+          <path d="M22 31 C18 26 19 19 22 15.5 C25 19 26 26 22 31Z" fill="#EAF5EE"/>
+          <path d="M8 23.5 Q22 14 36 22" fill="none" stroke="#F7C866" stroke-width="1.6" stroke-linecap="round" opacity=".9"/>
         </svg>
         <div>
           <b>Common Ground</b>
@@ -641,7 +673,7 @@
     </div>
   </footer>
   <div class="foot-disc">
-    <div class="wrap">An independent proposal prepared by Kinetic Culture for the Pleasant Hill Recreation &amp; Park District and the City of Pleasant Hill. Not an official City or District publication. Revenue figures are illustrative projections based on published benchmarks from comparable agencies; actual results would be governed by a partnership agreement. Names shown under "the whole room" are current public officials, referenced to tailor the proposal; their inclusion does not imply endorsement.</div>
+    <div class="wrap">An independent proposal prepared by Kinetic Culture for the Pleasant Hill Recreation &amp; Park District (an independent special district) and the City of Pleasant Hill. Not an official City or District publication. Revenue figures are illustrative projections based on published benchmarks from comparable agencies; actual results would be governed by a partnership agreement. Names shown under "the whole room" are current public officials, referenced to tailor the proposal; their inclusion does not imply endorsement.</div>
   </div>
 
   <!-- ============ MODAL ============ -->

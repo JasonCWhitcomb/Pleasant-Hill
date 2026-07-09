@@ -323,6 +323,27 @@
     });
   }
 
+  /* ---------- 3D tilt on cards (hover devices only) ---------- */
+  var canHover = window.matchMedia && window.matchMedia("(hover:hover)").matches;
+  if (canHover && !reduce) {
+    document.querySelectorAll(".tilt").forEach(function (el) {
+      var raf = null;
+      el.addEventListener("pointermove", function (e) {
+        var r = el.getBoundingClientRect();
+        var px = (e.clientX - r.left) / r.width - 0.5;
+        var py = (e.clientY - r.top) / r.height - 0.5;
+        if (raf) cancelAnimationFrame(raf);
+        raf = requestAnimationFrame(function () {
+          el.style.transform = "perspective(900px) rotateX(" + (-py * 4.5).toFixed(2) + "deg) rotateY(" + (px * 5.5).toFixed(2) + "deg) translateY(-6px)";
+        });
+      }, { passive: true });
+      el.addEventListener("pointerleave", function () {
+        if (raf) cancelAnimationFrame(raf);
+        el.style.transform = "";
+      });
+    });
+  }
+
   /* ---------- hero parallax ---------- */
   if (!reduce) {
     var sun = document.querySelector(".hero-sun"), layer = document.querySelector(".hero-layer");
