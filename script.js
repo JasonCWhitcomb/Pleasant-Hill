@@ -344,15 +344,80 @@
     });
   }
 
-  /* ---------- hero parallax ---------- */
-  if (!reduce) {
-    var sun = document.querySelector(".hero-sun"), layer = document.querySelector(".hero-layer");
-    document.addEventListener("scroll", function () {
-      var y = window.scrollY;
-      if (y < window.innerHeight * 1.2) {
-        if (sun) sun.style.transform = "translateY(" + y * 0.28 + "px)";
-        if (layer) layer.style.transform = "translateX(-50%) translateY(" + y * 0.06 + "px)";
+  /* ---------- hero: warm drifting light on canvas ---------- */
+  (function () {
+    var canvas = document.getElementById("hero-canvas");
+    if (!canvas || !canvas.getContext) return;
+    var ctx = canvas.getContext("2d");
+    var W = 0, H = 0, motes = [], raf = null;
+    var colors = ["rgba(247,200,102,", "rgba(143,220,174,", "rgba(84,182,129,", "rgba(255,240,206,"];
+    function resize() {
+      var dpr = Math.min(window.devicePixelRatio || 1, 2);
+      W = canvas.clientWidth; H = canvas.clientHeight;
+      canvas.width = W * dpr; canvas.height = H * dpr;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    }
+    function rnd(a, b) { return a + (b - a) * ((Math.sin(motes.length * 999 + Date.now() % 1) + 1)); }
+    function seed() {
+      var n = Math.max(28, Math.round(Math.min(W, 1100) / 18));
+      motes = [];
+      for (var i = 0; i < n; i++) {
+        // deterministic-ish spread without Math.random dependency issues
+        var rx = ((i * 9301 + 49297) % 233280) / 233280;
+        var ry = ((i * 4523 + 12345) % 65521) / 65521;
+        var rr = ((i * 7919 + 104729) % 9973) / 9973;
+        motes.push({
+          x: rx * W, y: ry * H, r: 2 + rr * 5,
+          vy: -(0.06 + rr * 0.2), vx: (rx - 0.5) * 0.1,
+          sway: rx * 6.28, swaySpeed: 0.002 + ry * 0.004,
+          a: 0.12 + rr * 0.38, c: colors[i % colors.length]
+        });
       }
+    }
+    function paint(animate) {
+      ctx.clearRect(0, 0, W, H);
+      for (var i = 0; i < motes.length; i++) {
+        var m = motes[i];
+        if (animate) {
+          m.sway += m.swaySpeed;
+          m.x += m.vx + Math.sin(m.sway) * 0.22;
+          m.y += m.vy;
+          if (m.y < -12) { m.y = H + 12; }
+          if (m.x < -12) m.x = W + 12; else if (m.x > W + 12) m.x = -12;
+        }
+        var R = m.r * 4;
+        var g = ctx.createRadialGradient(m.x, m.y, 0, m.x, m.y, R);
+        g.addColorStop(0, m.c + m.a + ")");
+        g.addColorStop(1, m.c + "0)");
+        ctx.fillStyle = g;
+        ctx.beginPath(); ctx.arc(m.x, m.y, R, 0, 6.2832); ctx.fill();
+      }
+      if (animate) raf = requestAnimationFrame(function () { paint(true); });
+    }
+    resize(); seed(); paint(!reduce);
+    var rt;
+    window.addEventListener("resize", function () {
+      clearTimeout(rt);
+      rt = setTimeout(function () { resize(); seed(); if (reduce) paint(false); }, 200);
     }, { passive: true });
+  })();
+
+  /* ---------- hero cursor parallax (washes + light) ---------- */
+  if (!reduce) {
+    var hero = document.querySelector(".hero");
+    var atmos = document.querySelector(".hero-atmos");
+    var canv = document.getElementById("hero-canvas");
+    if (hero) {
+      hero.addEventListener("pointermove", function (e) {
+        var cx = e.clientX / window.innerWidth - 0.5;
+        var cy = e.clientY / window.innerHeight - 0.5;
+        if (atmos) atmos.style.transform = "translate(" + (cx * 22) + "px," + (cy * 22) + "px)";
+        if (canv) canv.style.transform = "translate(" + (cx * 10) + "px," + (cy * 10) + "px)";
+      }, { passive: true });
+      hero.addEventListener("pointerleave", function () {
+        if (atmos) atmos.style.transform = "";
+        if (canv) canv.style.transform = "";
+      });
+    }
   }
 })();

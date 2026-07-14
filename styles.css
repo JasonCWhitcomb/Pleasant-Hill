@@ -136,7 +136,8 @@ h1,h2,h3,h4{font-family:"Fraunces",serif;font-weight:500;letter-spacing:-.016em;
 .kc-script{font-family:'Sacramento',cursive;font-size:1.85rem;line-height:1;color:var(--forest);white-space:nowrap}
 .kc-foot{font-size:1.35rem;color:var(--tx-inv);vertical-align:middle}
 @media (max-width:680px){.kc-by{display:none}}
-@media (max-width:440px){.kc-script{font-size:1.6rem}.brand .b-2{display:none}}
+@media (max-width:560px){.kc-lockup{display:none}}
+@media (max-width:440px){.brand .b-2{display:none}}
 
 /* =========================================================
    BUTTONS
@@ -156,32 +157,29 @@ h1,h2,h3,h4{font-family:"Fraunces",serif;font-weight:500;letter-spacing:-.016em;
 /* =========================================================
    HERO — bright, sunlit, layered, parallax
    ========================================================= */
-.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden;
-  background:linear-gradient(180deg,#EAF3F4 0%,#F3EFE0 42%,#F6EFDD 100%)}
-.hero .wrap{position:relative;z-index:5;padding-bottom:clamp(3rem,8vw,6rem);padding-top:7rem;width:100%}
-/* sky sun */
-/* atmospheric drifting orbs for depth */
+.hero{position:relative;min-height:100svh;display:flex;align-items:center;overflow:hidden;
+  background:
+    radial-gradient(58vw 52vw at 82% 16%, rgba(247,200,102,.42), transparent 60%),
+    radial-gradient(52vw 48vw at 8% 6%, rgba(143,220,174,.5), transparent 62%),
+    radial-gradient(80vw 66vw at 50% 116%, rgba(27,107,66,.6), transparent 58%),
+    linear-gradient(170deg,#EAF4EC 0%,#F4EFDF 52%,#F0E7D3 100%)}
+.hero .wrap{position:relative;z-index:5;padding-bottom:clamp(3rem,8vw,5rem);padding-top:7rem;width:100%}
+/* animated canvas: warm drifting light (dappled golden hour) */
+.hero-canvas{position:absolute;inset:0;z-index:1;width:100%;height:100%;pointer-events:none}
+/* large soft colour washes that drift and react to the cursor */
 .hero-atmos{position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none}
-.hero-atmos .orb{position:absolute;border-radius:50%;filter:blur(40px);opacity:.5;will-change:transform}
-.hero-atmos .o1{width:36vw;height:36vw;top:-8vw;left:-6vw;background:radial-gradient(circle,rgba(143,220,174,.6),transparent 68%);animation:drift 26s var(--ease) infinite alternate}
-.hero-atmos .o2{width:30vw;height:30vw;top:8vw;right:-4vw;background:radial-gradient(circle,rgba(127,204,230,.45),transparent 68%);animation:drift2 30s var(--ease) infinite alternate}
-.hero-atmos .o3{width:26vw;height:26vw;bottom:14vw;left:24vw;background:radial-gradient(circle,rgba(247,200,102,.4),transparent 68%);animation:drift 34s var(--ease) infinite alternate}
-@keyframes drift{to{transform:translate(28px,-22px) scale(1.08)}}
-@keyframes drift2{to{transform:translate(-30px,18px) scale(1.06)}}
-/* modern sun: soft glow + defined core */
-.hero-sun{position:absolute;z-index:1;top:8%;right:12%;width:min(30vw,340px);aspect-ratio:1;border-radius:50%;
-  background:radial-gradient(circle,rgba(247,200,102,.55),rgba(230,167,51,.14) 48%,transparent 72%);
-  display:grid;place-items:center;animation:sunrise 2.2s var(--ease) both,sunfloat 18s ease-in-out infinite alternate}
-.sun-core{width:42%;height:42%;border-radius:50%;background:radial-gradient(circle at 38% 34%,#FFF0CE,#F7C866 55%,#E6A733);box-shadow:0 0 60px 12px rgba(247,200,102,.5)}
-@keyframes sunrise{from{opacity:0;transform:translateY(60px) scale(.85)}to{opacity:1;transform:none}}
-@keyframes sunfloat{to{transform:translateY(-16px)}}
-/* layered hills scene */
-.hero-scene{position:absolute;inset:0;z-index:2;overflow:hidden;pointer-events:none}
-.hero-scene svg{position:absolute;bottom:-1px;left:50%;transform:translateX(-50%);width:max(1500px,102%);height:auto}
-.hero-layer{will-change:transform}
+.hero-atmos .orb{position:absolute;border-radius:50%;filter:blur(46px);opacity:.55;will-change:transform}
+.hero-atmos .o1{width:40vw;height:40vw;top:-10vw;left:-8vw;background:radial-gradient(circle,rgba(143,220,174,.7),transparent 68%);animation:drift 28s var(--ease) infinite alternate}
+.hero-atmos .o2{width:34vw;height:34vw;top:2vw;right:-8vw;background:radial-gradient(circle,rgba(247,200,102,.6),transparent 68%);animation:drift2 32s var(--ease) infinite alternate}
+.hero-atmos .o3{width:30vw;height:30vw;bottom:-6vw;left:14vw;background:radial-gradient(circle,rgba(84,182,129,.55),transparent 66%);animation:drift 36s var(--ease) infinite alternate}
+.hero-atmos .o4{width:26vw;height:26vw;bottom:2vw;right:16vw;background:radial-gradient(circle,rgba(127,204,230,.4),transparent 68%);animation:drift2 40s var(--ease) infinite alternate}
+@keyframes drift{to{transform:translate(30px,-24px) scale(1.08)}}
+@keyframes drift2{to{transform:translate(-32px,20px) scale(1.06)}}
 /* fine film grain for a modern, non-flat finish */
-.hero-grain{position:absolute;inset:0;z-index:3;pointer-events:none;opacity:.5;mix-blend-mode:soft-light;
+.hero-grain{position:absolute;inset:0;z-index:2;pointer-events:none;opacity:.4;mix-blend-mode:soft-light;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+/* soft fade into the section below */
+.hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:20%;z-index:3;pointer-events:none;background:linear-gradient(180deg,transparent,rgba(240,231,211,.85))}
 
 .hero .k{display:inline-flex;align-items:center;gap:.6rem;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:var(--green-deep);background:rgba(84,182,129,.14);border:1px solid rgba(44,138,87,.24);padding:.5rem .95rem;border-radius:999px;margin-bottom:1.6rem;opacity:0;transform:translateY(14px);transition:.8s var(--ease) .2s}
 .hero .k .d{width:7px;height:7px;border-radius:50%;background:var(--green);animation:live 2.6s ease-out infinite}
